@@ -1,0 +1,525 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Visites d'évaluation HAS</title>
+<meta name="description" content="Calendrier et planning détaillé des 13 visites d'évaluation HAS de Mlezi Maore (nov.–déc. 2026)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#f6f3ea;
+  --paper-raised:#ffffff;
+  --ink:#1c2b33;
+  --ink-soft:#5b6b72;
+  --line:#e1dccb;
+  --line-strong:#cdc6ae;
+  --navy:#1c4a63;
+  --navy-soft:#e7eef1;
+  --teal:#3e8e78;
+  --teal-soft:#e5f1ec;
+  --amber:#b5822c;
+  --amber-soft:#f6ecd9;
+  --coral:#b3503b;
+  --coral-soft:#f5e6e0;
+  --shadow:0 1px 2px rgba(28,43,51,.06), 0 8px 24px rgba(28,43,51,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#171d20;
+    --paper-raised:#20282c;
+    --ink:#eceae2;
+    --ink-soft:#9aa6ab;
+    --line:#333c40;
+    --line-strong:#454f53;
+    --navy:#7fb2cd;
+    --navy-soft:#22333c;
+    --teal:#7cc4ae;
+    --teal-soft:#1e3530;
+    --amber:#e0b567;
+    --amber-soft:#3a2f1c;
+    --coral:#e2917d;
+    --coral-soft:#3a251f;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#171d20;
+  --paper-raised:#20282c;
+  --ink:#eceae2;
+  --ink-soft:#9aa6ab;
+  --line:#333c40;
+  --line-strong:#454f53;
+  --navy:#7fb2cd;
+  --navy-soft:#22333c;
+  --teal:#7cc4ae;
+  --teal-soft:#1e3530;
+  --amber:#e0b567;
+  --amber-soft:#3a2f1c;
+  --coral:#e2917d;
+  --coral-soft:#3a251f;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  padding-inline:0;
+}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;text-wrap:balance;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--navy)}
+button{font-family:inherit}
+
+/* ---------- header ---------- */
+header{
+  padding:26px 20px 18px;
+  border-bottom:1px solid var(--line);
+  background:var(--paper-raised);
+}
+.header-inner{max-width:1180px;margin:0 auto}
+.eyebrow{
+  font:600 12px/1 "IBM Plex Sans",sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;
+  color:var(--navy);margin-bottom:8px;
+}
+header h1{font-size:clamp(24px,4vw,32px);font-weight:600;color:var(--ink)}
+header p.sub{margin:8px 0 0;color:var(--ink-soft);font-size:14.5px;max-width:62ch;line-height:1.5}
+
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.stat{
+  background:var(--navy-soft);border:1px solid var(--line);border-radius:10px;
+  padding:9px 14px;font-size:13px;color:var(--ink);
+}
+.stat b{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--navy);margin-right:5px}
+
+/* ---------- tabs ---------- */
+.tabs{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+  display:flex;gap:4px;padding:10px 20px;background:var(--paper);
+  border-bottom:1px solid var(--line);overflow-x:auto;
+}
+.tabs-inner{display:flex;gap:4px;max-width:1180px;margin:0 auto;width:100%}
+.tab-btn{
+  border:1px solid transparent;background:transparent;color:var(--ink-soft);
+  padding:9px 16px;border-radius:999px;font-size:13.5px;font-weight:600;
+  cursor:pointer;white-space:nowrap;transition:.15s;
+}
+.tab-btn:hover{color:var(--ink)}
+.tab-btn[aria-selected="true"]{
+  background:var(--navy);color:#fff;
+}
+.tab-btn:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+
+main{max-width:1180px;margin:0 auto;padding:24px 20px 64px}
+section[role="tabpanel"][hidden]{display:none}
+
+/* ---------- calendrier / timeline ---------- */
+.timeline-wrap{
+  background:var(--paper-raised);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.timeline-legend{
+  display:flex;gap:16px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--line);
+  font-size:12.5px;color:var(--ink-soft);
+}
+.legend-dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.timeline-scroll{overflow-x:auto}
+.timeline{min-width:900px}
+.tl-months{display:grid;padding:10px 18px 6px;font-size:11.5px;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase}
+.tl-row{
+  display:grid;grid-template-columns:200px 1fr;align-items:center;
+  padding:7px 18px;border-top:1px solid var(--line);
+}
+.tl-row:hover{background:var(--navy-soft)}
+.tl-name{font-size:13.5px;font-weight:600;cursor:pointer;padding-right:8px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tl-name:hover{color:var(--navy);text-decoration:underline}
+.tl-track{position:relative;height:26px}
+.tl-grid-line{position:absolute;top:0;bottom:0;width:1px;background:var(--line)}
+.tl-bar{
+  position:absolute;top:4px;height:18px;border-radius:6px;
+  background:var(--navy);opacity:.88;cursor:pointer;
+  display:flex;align-items:center;padding:0 8px;
+  font-size:11px;color:#fff;font-weight:600;white-space:nowrap;overflow:hidden;
+}
+.tl-bar:hover{opacity:1;box-shadow:0 0 0 2px var(--navy)}
+.tl-bar.multi{background:var(--teal)}
+
+/* ---------- planning détaillé ---------- */
+.filters{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;align-items:center;
+}
+.filters select,.filters input{
+  font:inherit;font-size:13.5px;padding:9px 12px;border-radius:9px;
+  border:1px solid var(--line-strong);background:var(--paper-raised);color:var(--ink);
+}
+.filters input{flex:1;min-width:180px}
+.chk-siege{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink-soft);white-space:nowrap;cursor:pointer}
+.chk-siege input{flex:none;width:auto}
+.tag.siege{background:var(--amber-soft);color:var(--amber)}
+.filters .count{font-size:12.5px;color:var(--ink-soft);margin-left:auto}
+
+.group{
+  background:var(--paper-raised);border:1px solid var(--line);border-radius:14px;
+  margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden;
+}
+.group-head{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding:16px 18px;cursor:pointer;
+}
+.group-head h3{font-size:17px;font-weight:600}
+.group-head .meta{font-size:12.5px;color:var(--ink-soft);white-space:nowrap}
+.group-ref{
+  display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 14px;
+}
+.ref-chip{
+  font-size:11.5px;padding:3px 10px;border-radius:999px;
+  background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);
+}
+.ref-chip b{color:var(--ink);font-weight:600;margin-right:4px}
+.day-ref{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.group-body{border-top:1px solid var(--line)}
+.day-block{padding:14px 18px}
+.day-block + .day-block{border-top:1px dashed var(--line)}
+.day-title{
+  font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--navy);margin-bottom:10px;
+}
+.sess{
+  display:grid;grid-template-columns:96px 1fr;gap:12px;padding:9px 0;
+  border-top:1px solid var(--line);
+}
+.sess:first-child{border-top:none}
+.sess-away{background:var(--amber-soft);margin:0 -18px;padding:9px 18px;border-top-color:transparent}
+.sess .time{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);padding-top:1px}
+.sess .body b{font-size:13.5px;font-weight:600}
+.sess .body .th{font-size:12.5px;color:var(--ink-soft);margin-top:2px;line-height:1.4}
+.sess .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{
+  font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;
+  background:var(--navy-soft);color:var(--navy);
+}
+.tag.loc{background:var(--teal-soft);color:var(--teal)}
+.tag.ev{background:var(--amber-soft);color:var(--amber)}
+.note-row{
+  padding:7px 0;font-size:12px;color:var(--ink-soft);font-style:italic;
+  border-top:1px dashed var(--line);
+}
+.note-row:first-child{border-top:none}
+
+/* ---------- à remplir ---------- */
+.card{
+  background:var(--paper-raised);border:1px solid var(--line);border-radius:14px;
+  padding:22px;box-shadow:var(--shadow);margin-bottom:16px;
+}
+.card h2{font-size:19px;margin-bottom:10px}
+.card p{font-size:14px;line-height:1.6;color:var(--ink-soft);margin:0 0 12px}
+.steps{display:grid;gap:10px;margin:14px 0}
+.step{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start}
+.step-n{
+  width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;
+}
+.step div:last-child{font-size:13.5px;padding-top:3px}
+.step b{display:block;font-size:14px;margin-bottom:2px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--navy);color:#fff;border:none;border-radius:10px;
+  padding:11px 18px;font-size:13.5px;font-weight:600;text-decoration:none;
+  margin-top:8px;
+}
+.btn:hover{opacity:.92}
+.btn.secondary{background:transparent;border:1px solid var(--line-strong);color:var(--ink)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.cols{grid-template-columns:1fr}}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.badge{
+  font-size:12px;background:var(--paper);border:1px solid var(--line);
+  padding:5px 10px;border-radius:8px;color:var(--ink-soft);
+}
+
+footer{text-align:center;padding:20px;font-size:12px;color:var(--ink-soft)}
+</style>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">Mlezi Maore · Groupe SOS Mayotte</div>
+    <h1>Visites d'évaluation HAS — Nov.–Déc. 2026</h1>
+    <p class="sub">Calendrier et planning détaillé des 13 visites d'évaluation programmées par la Haute Autorité de Santé, à partir des programmes transmis pour chaque ESSMS.</p>
+    <div class="stats" id="statsRow"></div>
+  </div>
+</header>
+
+<div class="tabs">
+  <div class="tabs-inner" role="tablist">
+    <button class="tab-btn" role="tab" data-tab="cal" aria-selected="true">Calendrier par structure</button>
+    <button class="tab-btn" role="tab" data-tab="det" aria-selected="false">Planning détaillé</button>
+    <button class="tab-btn" role="tab" data-tab="fill" aria-selected="false">À remplir</button>
+  </div>
+</div>
+
+<main>
+  <section id="panel-cal" role="tabpanel">
+    <div class="timeline-wrap">
+      <div class="timeline-legend">
+        <span><span class="legend-dot" style="background:var(--navy)"></span>Visite (1–2 jours)</span>
+        <span><span class="legend-dot" style="background:var(--teal)"></span>Visite multi-sites (3–4 jours)</span>
+        <span style="margin-left:auto">Cliquer une structure ou une barre pour ouvrir son planning détaillé</span>
+      </div>
+      <div class="timeline-scroll">
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="panel-det" role="tabpanel" hidden>
+    <div class="filters">
+      <select id="fStructure"><option value="">Toutes les structures</option></select>
+      <input id="fSearch" type="search" placeholder="Rechercher (thème, lieu, évaluateur…)">
+      <label class="chk-siege"><input type="checkbox" id="fSiege"> Chapitre 3 (Siège) uniquement</label>
+      <span class="count" id="fCount"></span>
+    </div>
+    <div id="groups"></div>
+  </section>
+
+  <section id="panel-fill" role="tabpanel" hidden>
+    <div class="cols">
+      <div class="card">
+        <h2>Classeur de suivi (à remplir)</h2>
+        <p>La logistique et les convocations de chaque créneau (salle réservée, professionnels convoqués, statut de convocation, référent) se renseignent directement dans le classeur de suivi — pas dans cette page, qui reste une vue de lecture.</p>
+        <div class="steps">
+          <div class="step"><div class="step-n">1</div><div><b>Ouvrez le dossier Drive dédié</b>« Suivi préparation exécution des évaluations »</div></div>
+          <div class="step"><div class="step-n">2</div><div><b>Déposez-y le classeur</b>Suivi_visites_evaluation_HAS.xlsx (envoyé séparément) — il devient un Google Sheets dès l'ouverture</div></div>
+          <div class="step"><div class="step-n">3</div><div><b>Complétez, structure par structure</b>onglet « Planning détaillé » : salle, professionnels convoqués, statut de convocation, référent, notes</div></div>
+        </div>
+        <a class="btn" href="https://drive.google.com/drive/folders/1jT3TSa-vl2iHXflYiWcwC0HCRebHWra8" target="_blank" rel="noopener">Ouvrir le dossier Drive →</a>
+      </div>
+      <div class="card">
+        <h2>Droits d'accès</h2>
+        <p>La matrice des droits (qui voit quoi, qui remplit quoi, structure par structure) est un gabarit séparé à compléter : trois lignes vierges sont pré-créées par structure pour y indiquer les rôles ou personnes concernés.</p>
+        <div class="badge-row">
+          <span class="badge">Voir calendrier</span>
+          <span class="badge">Voir planning détaillé</span>
+          <span class="badge">Remplir logistique</span>
+          <span class="badge">Administrateur</span>
+        </div>
+        <p style="margin-top:14px">Une fois complétée, cette matrice définit les partages à appliquer sur le classeur Google Sheets.</p>
+        <a class="btn secondary" href="https://drive.google.com/drive/folders/1jT3TSa-vl2iHXflYiWcwC0HCRebHWra8" target="_blank" rel="noopener">Matrice_droits_acces.xlsx → même dossier</a>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Ce qui reste dans cette page vs. ce qui va au classeur</h2>
+      <p><b style="color:var(--ink)">Cette page (lecture seule)</b> — calendrier par structure, planning détaillé issu des 13 programmes HAS tels que transmis, filtres et recherche.</p>
+      <p style="margin-top:2px"><b style="color:var(--ink)">Le classeur (à remplir)</b> — salle réservée, professionnels et personnes accompagnées convoqués, date et statut de convocation, référent Mlezi Maore, notes, et statut global de préparation par structure.</p>
+    </div>
+  </section>
+</main>
+
+<footer>Données issues des 13 programmes de visite d'évaluation HAS transmis par ESSMS · généré pour Mlezi Maore</footer>
+
+<script>
+const DATA = [{"sv":"IME (4 sites)","dy":[{"t":"P R E M I E R J O U R : 02/11/26","d":"2026-11-02","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"CHIRONGUI","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"AH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas et déplacement sur site de COMBANI"},{"h":"13h00-13h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"AH"},{"n":"15h30-16h30 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 03/11/26","d":"2026-11-03","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"TSOUNDZOU","ev":"BH / AH"},{"h":"8h30-9h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"9h00-10h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"AH"},{"h":"10h30-11h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 4","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"11h00-12h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°4","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas et Observation des pratiques"}]},{"t":"T R O I S I E M E J O U R : 04/11/26","d":"2026-11-04","s":[{"h":"08h30-9h00","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"PETITE TERRE","ev":"BH / AH"},{"h":"09h00-9h30","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 5","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°5","li":"Une salle d’entretien","ev":"BH"},{"n":"Repas et Observation des pratiques"},{"h":"13h00-13h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 6","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°6","li":"Une salle d’entretien","ev":"BH"},{"h":"15h30-16h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"n":"16h00-17h00 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"Q U A T R I E M E J O U R : 05/11/26","d":"2026-11-05","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"Site","ev":"BH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance / au Siège","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels / sur Site où se trouvent les professionnels","li":"Une salle d’entretien","ev":"AH","venue":"Plateforme TND"},{"n":"Repas"},{"h":"13h00-14h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance / au Siège","li":"Une salle d’entretien","ev":"BH","siege":true},{"n":"Déplacement sur site où se trouvent les professionnels (BH)"},{"h":"14h30-16h00","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"14h30-15h30","na":"Conseil de la Vie Sociale","th":"","fo":"Représentants des personnes accompagnées et représentants des familles (pas de membres du personnel)","li":"Une salle d’entretien","ev":"AH"},{"h":"15h30-16h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH","venue":"Plateforme TND"},{"h":"16h30-17h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"17h00-18h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Abdoulkassim ABIDI","cds":"Doihara MAHAMOUDOU","tel":"+262 639 09 96 83","site":"Chirongui / Combani"},"refByDay":[{"directeur":"Abdoulkassim ABIDI","chef_service":"Doihara MAHAMOUDOU","tel":"+262 639 09 96 83","site":"Chirongui / Combani"},{"directeur":"Salima BENAISSA","chef_service":"Adidja SOUFIANI","tel":"+262 639 27 30 19","site":"Tsoundzou"},{"directeur":"Toyfria ANASSI","chef_service":"Bouchouraki ASSANI","tel":"+262 639 28 28 59","site":"Petite-Terre"},{"directeur":"Abdoulkassim ABIDI / Salima BENAISSA / Toyfria ANASSI","chef_service":"Coordination des 3 sites (débriefing)","tel":"","site":"Débriefing (3 sites)"}]},{"sv":"CAMSP Tanafou","dy":[{"t":"P R E M I E R J O U R : 09/11/26","d":"2026-11-09","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"BH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"AH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"BH"},{"h":"13h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"15h00-16h00 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 10/11/26","d":"2026-11-10","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"","ev":"BH/AH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"h":"15h30-16h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"16h00-17h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Abdoulkassim ABIDI","cds":"","tel":"+262 639 68 71 17","site":"M'Tsangamouji"},"refByDay":null},{"sv":"MECS","dy":[{"t":"P R E M I E R J O U R : 11/11/26","d":"2026-11-11","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"AH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"BH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"AH"},{"h":"13h00-14h00","na":"Conseil de la Vie Sociale","th":"","fo":"Représentants des personnes accompagnées et représentants des familles (pas de membres du personnel)","li":"Une salle d’entretien","ev":"BH"},{"h":"14h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"n":"15h00-16h00 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 12/11/26","d":"2026-11-12","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"Site","ev":"BH/AH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance / au Siège","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels / sur Site","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas et déplacement sur site (BH)"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"h":"15h30-16h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"16h00-17h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Mohamadi AHMED","cds":"Thouraya ABDOU MADI","tel":"+262 639 40 02 93","site":"Chirongui (Miréréni)"},"refByDay":null},{"sv":"ITEP","dy":[{"t":"P R E M I E R J O U R : 13/11/26","d":"2026-11-13","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"BH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"AH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"BH"},{"h":"13h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"15h00-16h00 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 16/11/26","d":"2026-11-16","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"","ev":"BH/AH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas et déplacement sur le site"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"h":"15h30-16h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"16h00-17h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Michéle DENONVILLE","cds":"Abderemane IBRAHIM","tel":"+262 639 94 01 60","site":"Combani (Tsingoni)"},"refByDay":null},{"sv":"SESSAD Marylang","dy":[{"t":"P R E M I E R J O U R : 17/11/26","d":"2026-11-17","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"AH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"BH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"AH"},{"h":"13h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"n":"15h00-16h00 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 18/11/26","d":"2026-11-18","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"Site","ev":"BH/AH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance / au Siège","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels / sur Site","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas et déplacement sur le site (BH)"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"h":"15h30-16h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"16h00-17h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Michéle DENONVILLE","cds":"Abderemane IBRAHIM","tel":"+262 639 94 01 60","site":"Combani (Tsingoni)"},"refByDay":null},{"sv":"CAMSP Imida","dy":[{"t":"P R E M I E R J O U R : 19/11/26","d":"2026-11-19","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"BH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"AH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"BH"},{"h":"13h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"15h00-16h00 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 20/11/26","d":"2026-11-20","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"","ev":"BH/AH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"h":"15h30-16h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"16h00-17h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Abdoulkassim ABIDI","cds":"Doihara MAHAMOUDOU","tel":"+262 639 09 96 83","site":"Chirongui"},"refByDay":null},{"sv":"IME Kangani","dy":[{"t":"P R E M I E R J O U R : 23/11/26","d":"2026-11-23","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"AH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"BH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"AH"},{"h":"13h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"n":"15h00-16h00 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 24/11/26","d":"2026-11-24","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"Site","ev":"BH/AH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance / au Siège","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels / sur Site","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas et déplacement sur le site (BH)"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"h":"15h30-16h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"16h00-17h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Michéle DENONVILLE","cds":"Madi ABDALLAH","tel":"+262 639 40 33 17","site":"Kangani (Koungou)"},"refByDay":null},{"sv":"SESSAD Kangani","dy":[{"t":"P R E M I E R J O U R : 25/11/26","d":"2026-11-25","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"BH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"AH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"BH"},{"h":"13h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"15h00-16h00 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 26/11/26","d":"2026-11-26","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"","ev":"BH/AH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance / du Siège","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels / du Site","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas et déplacement sur le site (BH)"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"h":"15h30-16h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"16h00-17h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Michéle DENONVILLE","cds":"Madi ABDALLAH","tel":"+262 639 40 33 17","site":"Kangani (Koungou)"},"refByDay":null},{"sv":"LVA Chirongui (Sud)","dy":[{"t":"P R E M I E R J O U R : 07/12/26","d":"2026-12-07","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"09h00-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"09h00-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"n":"15h30-16h30 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 08/12/26","d":"2026-12-08","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"","ev":"BH/AH"},{"h":"8h30-9h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"BH/AH"},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"AH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"BH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"AH"},{"h":"13h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"15h00-15h30","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"15h30-16h30","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Youssef-Edine MADI M'BARAKA","cds":"Stéphanie Pecquenard","tel":"+262 639 61 64 00","site":"Chirongui (LVA Sud)"},"refByDay":null},{"sv":"LVA Tsoundzou (Nord)","dy":[{"t":"P R E M I E R J O U R : 09/12/26","d":"2026-12-09","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"09h00-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"09h00-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"n":"15h30-16h30 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 10/12/26","d":"2026-12-10","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"","ev":"BH/AH"},{"h":"8h30-9h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"BH/AH"},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"BH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"AH"},{"h":"11h30-12h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"BH"},{"h":"13h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"h":"15h00-15h30","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"15h30-16h30","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Youssef-Edine MADI M'BARAKA","cds":"Stéphanie Pecquenard","tel":"+262 639 61 64 00","site":"Tsoundzou / Mamoudzou (LVA Nord)"},"refByDay":null},{"sv":"CER","dy":[{"t":"P R E M I E R J O U R : 11/12/26","d":"2026-12-11","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"09h00-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"09h00-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"n":"15h30-16h30 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 14/12/26","d":"2026-12-14","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"","ev":"BH/AH"},{"h":"8h30-9h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"BH/AH"},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"AH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"BH"},{"h":"11h30-12h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"AH"},{"h":"13h00-14h00","na":"Conseil de la Vie Sociale","th":"","fo":"Représentants des personnes accompagnées et représentants des familles (pas de membres du personnel)","li":"Une salle d’entretien","ev":"BH"},{"h":"14h00-15h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"15h00-15h30","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"15h30-16h30","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Mohamadi AHMED","cds":"Lamine GOUDIABY","tel":"+262 639 57 71 88","site":"Bandrélé (Nyambadao)"},"refByDay":null},{"sv":"EPE","dy":[{"t":"P R E M I E R J O U R : 15/12/26","d":"2026-12-15","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"POROANI","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de POROANI (AH)","th":"","fo":"","li":"","ev":""},{"h":"08h30-10h00","na":"Déplacement et Visite de TSARARANO (BH)","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 (Site POROANI)","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"10h00-10h30","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2 (Site TSARARANO)","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"9h30-11h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"AH"},{"h":"10h30-12h30","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"BH"},{"h":"11h30-12h30","na":"Déplacement et Visite de BARAKANI (AH)","th":"","fo":"","li":"","ev":""},{"n":"Repas"},{"h":"13h30-14h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3 (Site BARAKANI)","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"14h00-16h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-14h00","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"h":"14h00-16h00","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"16h00-17h00 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 16/12/26","d":"2026-12-16","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"TSARARANO","ev":"BH/AH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH","venue":"CMPP (Combani)"},{"n":"Repas"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH","venue":"CMPP (Combani)"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH","venue":"CMPP (Combani)"},{"h":"15h30-16h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"16h00-17h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Mohamadi AHMED","cds":"Binty YOUSSOUF","tel":"+262 639 09 70 80","site":"Poroani / Tsararano / Barakani"},"refByDay":null},{"sv":"CAMSP Maecha","dy":[{"t":"P R E M I E R J O U R : 17/12/26","d":"2026-12-17","s":[{"h":"08h-8h30","na":"Réunion d’ouverture","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"","ev":"BH / AH"},{"h":"08h30-9h00","na":"Visite de l’ESSMS","th":"","fo":"","li":"","ev":""},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 1 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 2","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"BH"},{"h":"9h00-9h30 / / 9h30-10h00","na":"Entretien individuel","th":"Chapitre 1 : La personne accompagnée/Accompagné traceur n° 3 / Chapitre 1 : La personne accompagnée/Accompagné traceur n° 4","fo":"Choisi par les évaluateurs au plus tôt deux semaines avant la visite et au plus tard le jour de la visite","li":"Une salle d’entretien","ev":"AH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°1","li":"Une salle d’entretien","ev":"BH"},{"h":"10h00-12h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°3","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°2","li":"Une salle d’entretien","ev":"BH"},{"h":"13h00-15h00","na":"Entretien collectif","th":"Chapitre 1 : Les professionnels/Accompagné traceur","fo":"L’équipe référente de l’accompagné traceur n°4","li":"Une salle d’entretien","ev":"AH"},{"h":"15h00-15h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"15h00-15h30","na":"Observation des pratiques","th":"","fo":"","li":"Une salle d’entretien","ev":"AH"},{"n":"15h30-16h30 Synthèse entre évaluateurs (Hors ESSMS)"}]},{"t":"D E U X I E M E J O U R : 18/12/26","d":"2026-12-18","s":[{"h":"08h00-08h30","na":"Entretien collectif / Debriefing","th":"","fo":"Gouvernance","li":"Site","ev":"BH/AH"},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 3 : L’ESSMS/Audit Système / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Gouvernance / au Siège","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"08h30-12h00","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée ; Expression et participation de la personne accompagnée ; Coconstruction et personnalisation du projet d’accompagnement","fo":"Professionnels / sur site","li":"Une salle d’entretien","ev":"AH"},{"n":"Repas et déplacement sur site (BH)"},{"h":"13h00-13h30","na":"Consultation documentaire","th":"","fo":"","li":"Une salle d’entretien","ev":"BH"},{"h":"13h30-15h30","na":"Entretien collectif","th":"Chapitre 3 : Les professionnels/Audit Système / Thématiques abordées : Bientraitance et éthique ; Accompagnement à l’autonomie ; Accompagnement à la santé ; Politique RH ; Démarche qualité et gestion des risques","fo":"Professionnels","li":"Une salle d’entretien","ev":"BH","siege":true},{"h":"13h00-14h30","na":"Entretien collectif","th":"Chapitre 2 : Les professionnels/ Traceur ciblé Thématiques abordées : Accompagnement à l’autonomie ; Accompagnement à la santé ; Continuité et fluidité de parcours.","fo":"Professionnels","li":"Une salle d’entretien","ev":"AH"},{"h":"14h30-15h30","na":"Entretien collectif","th":"Chapitre 2 : L’ESSMS/Traceur ciblé / Thématiques abordées : Bientraitance et éthique ; Droits de la personne accompagnée","fo":"Gouvernance","li":"Une salle d’entretien","ev":"AH"},{"h":"15h30-16h00","na":"Synthèse entre intervenants + préparation réunion bilan de fin de visite (une salle d’entretien)","th":"","fo":"","li":"","ev":""},{"h":"16h00-17h00","na":"Bilan de fin de visite","th":"","fo":"Gouvernance et toute autre personne que l’ESSMS souhaite associer","li":"Une salle d’entretien","ev":"BH/AH"}]}],"ref":{"dir":"Toyfria ANASSI","cds":"Toyfria ANASSI","tel":"+262 639 28 08 80","site":"Mamoudzou (Maécha)"},"refByDay":null}];
+
+const DAY_LABELS = ["Jour 1","Jour 2","Jour 3","Jour 4","Jour 5"];
+
+function parseISO(s){ const [y,m,d]=s.split('-').map(Number); return new Date(Date.UTC(y,m-1,d)); }
+function fmtDate(s){
+  const d = parseISO(s);
+  return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',timeZone:'UTC'});
+}
+function fmtDateLong(s){
+  const d = parseISO(s);
+  return d.toLocaleDateString('fr-FR',{weekday:'long',day:'2-digit',month:'long',timeZone:'UTC'});
+}
+
+/* ---------------- stats ---------------- */
+(function initStats(){
+  const nStruct = DATA.length;
+  const allDates = DATA.flatMap(p=>p.dy.map(d=>d.d)).filter(Boolean).sort();
+  const nSessions = DATA.reduce((a,p)=>a+p.dy.reduce((b,d)=>b+d.s.filter(s=>!s.n).length,0),0);
+  const el = document.getElementById('statsRow');
+  el.innerHTML = `
+    <div class="stat"><b>${nStruct}</b>structures évaluées</div>
+    <div class="stat"><b>${fmtDate(allDates[0])} → ${fmtDate(allDates[allDates.length-1])}</b>période</div>
+    <div class="stat"><b>${nSessions}</b>créneaux au total</div>
+  `;
+})();
+
+/* ---------------- tabs ---------------- */
+const tabBtns = document.querySelectorAll('.tab-btn');
+tabBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    tabBtns.forEach(b=>b.setAttribute('aria-selected', b===btn ? 'true':'false'));
+    document.querySelectorAll('section[role="tabpanel"]').forEach(p=>p.hidden = true);
+    document.getElementById('panel-'+btn.dataset.tab).hidden = false;
+  });
+});
+function goToDetail(structureName){
+  tabBtns.forEach(b=>b.setAttribute('aria-selected', b.dataset.tab==='det' ? 'true':'false'));
+  document.querySelectorAll('section[role="tabpanel"]').forEach(p=>p.hidden = true);
+  document.getElementById('panel-det').hidden = false;
+  document.getElementById('fStructure').value = structureName;
+  renderGroups();
+  const g = document.getElementById('group-'+cssEsc(structureName));
+  if(g) g.scrollIntoView({behavior:'smooth', block:'start'});
+}
+function cssEsc(s){ return s.replace(/[^a-zA-Z0-9_-]/g,'_'); }
+
+/* ---------------- timeline (calendrier) ---------------- */
+(function initTimeline(){
+  const rows = DATA.map(p=>{
+    const dates = p.dy.map(d=>d.d).filter(Boolean);
+    return {sv:p.sv, start:dates[0], end:dates[dates.length-1], n: p.dy.length};
+  }).sort((a,b)=> a.start < b.start ? -1 : 1);
+
+  const allStart = rows.map(r=>parseISO(r.start));
+  const allEnd = rows.map(r=>parseISO(r.end));
+  const minD = new Date(Math.min(...allStart));
+  const maxD = new Date(Math.max(...allEnd));
+  const totalDays = Math.round((maxD - minD)/86400000) + 3;
+
+  const months = [];
+  let cur = new Date(Date.UTC(minD.getUTCFullYear(), minD.getUTCMonth(), 1));
+  while(cur <= maxD){
+    months.push(new Date(cur));
+    cur = new Date(Date.UTC(cur.getUTCFullYear(), cur.getUTCMonth()+1, 1));
+  }
+
+  const el = document.getElementById('timeline');
+  const monthsRow = document.createElement('div');
+  monthsRow.className = 'tl-months';
+  monthsRow.style.gridTemplateColumns = `200px repeat(${months.length}, 1fr)`;
+  monthsRow.innerHTML = '<span></span>' + months.map(m=>
+    `<span>${m.toLocaleDateString('fr-FR',{month:'long',year:'numeric',timeZone:'UTC'})}</span>`
+  ).join('');
+  el.appendChild(monthsRow);
+
+  rows.forEach(r=>{
+    const row = document.createElement('div');
+    row.className = 'tl-row';
+    const startOff = (parseISO(r.start) - minD)/86400000;
+    const span = (parseISO(r.end) - parseISO(r.start))/86400000 + 1;
+    const leftPct = (startOff/totalDays)*100;
+    const widthPct = Math.max((span/totalDays)*100, 3);
+    row.innerHTML = `
+      <div class="tl-name" title="${r.sv}">${r.sv}</div>
+      <div class="tl-track">
+        <div class="tl-bar ${r.n>2?'multi':''}" style="left:${leftPct}%;width:${widthPct}%"
+             title="${r.sv} — ${fmtDate(r.start)} au ${fmtDate(r.end)} (${r.n} jour${r.n>1?'s':''})">
+          ${fmtDate(r.start)}${r.start!==r.end?' → '+fmtDate(r.end):''}
+        </div>
+      </div>`;
+    row.querySelector('.tl-name').addEventListener('click',()=>goToDetail(r.sv));
+    row.querySelector('.tl-bar').addEventListener('click',()=>goToDetail(r.sv));
+    el.appendChild(row);
+  });
+})();
+
+/* ---------------- planning détaillé ---------------- */
+const fStructure = document.getElementById('fStructure');
+const fSearch = document.getElementById('fSearch');
+const fSiege = document.getElementById('fSiege');
+DATA.slice().sort((a,b)=>a.sv.localeCompare(b.sv,'fr')).forEach(p=>{
+  const o = document.createElement('option');
+  o.value = p.sv; o.textContent = p.sv;
+  fStructure.appendChild(o);
+});
+
+function sessionMatches(s, q){
+  if(!q) return true;
+  const hay = [s.na,s.th,s.fo,s.li,s.ev].join(' ').toLowerCase();
+  return hay.includes(q);
+}
+
+function renderGroups(){
+  const wrap = document.getElementById('groups');
+  wrap.innerHTML = '';
+  const structFilter = fStructure.value;
+  const q = fSearch.value.trim().toLowerCase();
+  const siegeOnly = fSiege.checked;
+  let shown = 0, total = 0;
+
+  DATA.slice().sort((a,b)=>{
+    const da = a.dy.find(d=>d.d)?.d || '';
+    const db = b.dy.find(d=>d.d)?.d || '';
+    return da < db ? -1 : 1;
+  }).forEach(p=>{
+    if(structFilter && p.sv !== structFilter) return;
+
+    let dayBlocks = '';
+    let matchCount = 0;
+    p.dy.forEach((day, di)=>{
+      let rows = '';
+      day.s.forEach(s=>{
+        total += s.n ? 0 : 1;
+        if(s.n){
+          rows += `<div class="note-row">${s.n}</div>`;
+          return;
+        }
+        if(!sessionMatches(s,q)) return;
+        if(siegeOnly && !s.siege) return;
+        matchCount++; shown++;
+        const tags = [];
+        if(s.siege) tags.push(`<span class="tag siege">🏛 Siège</span>`);
+        else if(s.venue) tags.push(`<span class="tag siege">📍 ${s.venue}</span>`);
+        if(s.li) tags.push(`<span class="tag loc">${s.li}</span>`);
+        if(s.ev) tags.push(`<span class="tag ev">${s.ev}</span>`);
+        if(s.fo) tags.push(`<span class="tag">${s.fo}</span>`);
+        rows += `
+          <div class="sess${s.siege||s.venue ? ' sess-away' : ''}">
+            <div class="time">${s.h}</div>
+            <div class="body">
+              <b>${s.na}</b>
+              ${s.th ? `<div class="th">${s.th}</div>` : ''}
+              <div class="tags">${tags.join('')}</div>
+            </div>
+          </div>`;
+      });
+      const dayRef = (p.refByDay && p.refByDay[di]) || null;
+      const refLine = dayRef
+        ? `<div class="day-ref">${(dayRef.chef_service||dayRef.directeur) ? `<span class="ref-chip"><b>Réf.</b> ${dayRef.chef_service||dayRef.directeur}</span>` : ''}${dayRef.site?`<span class="tag loc">${dayRef.site}</span>`:''}</div>`
+        : '';
+      dayBlocks += `
+        <div class="day-block">
+          <div class="day-title">${DAY_LABELS[di]||'Jour '+(di+1)} · ${day.d ? fmtDateLong(day.d) : ''}</div>
+          ${refLine}
+          ${rows}
+        </div>`;
+    });
+
+    if(q && matchCount===0) return;
+
+    const dates = p.dy.map(d=>d.d).filter(Boolean);
+    const ref = p.ref || {};
+    const hasUniformRef = !p.refByDay && (ref.dir || ref.cds);
+    const refBlock = hasUniformRef ? `
+      <div class="group-ref">
+        ${ref.cds ? `<span class="ref-chip"><b>Chef de service</b> ${ref.cds}</span>` : ''}
+        ${ref.dir ? `<span class="ref-chip"><b>Directeur ESMS</b> ${ref.dir}</span>` : ''}
+        ${ref.tel ? `<span class="ref-chip"><b>Tél.</b> ${ref.tel}</span>` : ''}
+      </div>` : '';
+    const g = document.createElement('div');
+    g.className = 'group';
+    g.id = 'group-'+cssEsc(p.sv);
+    g.innerHTML = `
+      <div class="group-head">
+        <h3>${p.sv}</h3>
+        <span class="meta">${fmtDate(dates[0])}${dates[0]!==dates[dates.length-1] ? ' → '+fmtDate(dates[dates.length-1]) : ''} · ${p.dy.length} jour${p.dy.length>1?'s':''}</span>
+      </div>
+      ${refBlock}
+      <div class="group-body">${dayBlocks}</div>`;
+    wrap.appendChild(g);
+  });
+
+  document.getElementById('fCount').textContent = q ? `${shown} créneau(x) trouvé(s)` : '';
+}
+fStructure.addEventListener('change', renderGroups);
+fSearch.addEventListener('input', renderGroups);
+fSiege.addEventListener('change', renderGroups);
+renderGroups();
+</script>
+
+</body></html>
