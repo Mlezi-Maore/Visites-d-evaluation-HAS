@@ -315,13 +315,32 @@ footer b{color:var(--ink)}
   </div>
 </header>
 <div class="brand-stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+<style>
+.tab-cta{margin-left:auto;background:var(--orange-soft);color:var(--orange-text);border-color:var(--orange);display:inline-flex;align-items:center;gap:8px}
+.tab-cta:hover{color:var(--orange-text);border-color:var(--orange-text)}
+.tab-cta[aria-selected="true"]{background:var(--brand-fill);border-color:var(--brand-fill);color:#fff}
+.tab-flag{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:var(--brand-fill);color:#fff;padding:2px 7px;border-radius:999px}
+.tab-cta[aria-selected="true"] .tab-flag{background:#fff;color:var(--brand-fill)}
+.cta-banner{background:var(--orange-soft);border-bottom:1px solid var(--orange);padding:12px 20px}
+.cta-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cta-inner p{margin:0;flex:1;min-width:240px;font-size:14px;line-height:1.5;color:var(--ink)}
+.cta-inner p b{color:var(--orange-text)}
+.cta-inner .btn{margin-top:0}
+</style>
+<div class="cta-banner" role="region" aria-label="Action à réaliser">
+  <div class="cta-inner">
+    <p><b>À faire en priorité :</b> la sélection des personnes pour les chapitres 1 et 2 (professionnels et personnes accompagnées à convoquer) est à compléter dans le classeur de suivi, structure par structure.</p>
+    <a class="btn" href="https://docs.google.com/spreadsheets/d/1fW21nddRUHXTpLWB_OeqTEbgrEcqUpeTDziIb7TGqPk/edit?gid=768688803#gid=768688803" target="_blank" rel="noopener">Ouvrir le classeur →</a>
+    <button type="button" class="btn secondary" onclick="goToTab('fill');window.scrollTo({top:0,behavior:'smooth'})">Voir les explications</button>
+  </div>
+</div>
 
 <div class="tabs">
   <div class="tabs-inner" role="tablist">
     <button class="tab-btn" role="tab" data-tab="cal" aria-selected="true">Calendrier par structure</button>
     <button class="tab-btn" role="tab" data-tab="pre" aria-selected="false">Pré-évaluation</button>
     <button class="tab-btn" role="tab" data-tab="det" aria-selected="false">Planning détaillé</button>
-    <button class="tab-btn" role="tab" data-tab="fill" aria-selected="false">À remplir</button>
+    <button class="tab-btn tab-cta" role="tab" data-tab="fill" aria-selected="false">À remplir <span class="tab-flag">Essentiel</span></button>
   </div>
 </div>
 
@@ -363,7 +382,7 @@ footer b{color:var(--ink)}
   <section id="panel-fill" role="tabpanel" hidden>
     <div class="card">
       <h2>Classeur de suivi (à remplir)</h2>
-      <p>Cette page est une vue de lecture : elle présente le calendrier et le planning détaillé des visites, mais rien ne s'y saisit. La sélection des personnes pour les chapitres 2 et 3 (professionnels et personnes accompagnées à convoquer) se prépare dans le classeur Google Sheets « Sélection des personnes chapitres 2 et 3 ». Chaque structure y dispose de son onglet : les tableaux nécessaires sont à compléter par les personnes habilitées à le faire pour chaque structure.</p>
+      <p>Cette page est une vue de lecture : elle présente le calendrier et le planning détaillé des visites, mais rien ne s'y saisit. La sélection des personnes pour les chapitres 1 et 2 (professionnels et personnes accompagnées à convoquer) se prépare dans le classeur Google Sheets « Sélection des personnes chapitres 1 et 2 ». Chaque structure y dispose de son onglet : les tableaux nécessaires sont à compléter par les personnes habilitées à le faire pour chaque structure.</p>
       <a class="btn" href="https://docs.google.com/spreadsheets/d/1fW21nddRUHXTpLWB_OeqTEbgrEcqUpeTDziIb7TGqPk/edit?gid=768688803#gid=768688803" target="_blank" rel="noopener">Ouvrir le classeur →</a>
     </div>
   </section>
