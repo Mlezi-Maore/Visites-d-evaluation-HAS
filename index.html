@@ -302,6 +302,16 @@ footer b{color:var(--ink)}
 }
 .pre-eval{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .tag.pre{background:var(--pre-fill);color:#fff}
+/* pastilles Google Maps */
+.pin,.maplink{text-decoration:none}
+.pin{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;line-height:1.2;padding:4px 10px;border-radius:999px;background:var(--blue-soft);color:var(--blue-text);border:1px solid transparent}
+.pin:hover,.maplink:hover{text-decoration:underline}
+.pin:hover{border-color:var(--blue-text)}
+.pin:focus-visible,.maplink:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+a.tag.maplink{cursor:pointer}
+.tl-item{cursor:default}
+.tl-main{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:transparent;border:0;padding:0;cursor:pointer}
+.tl-pins{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 </style>
 <header>
   <div class="header-inner">
@@ -351,7 +361,7 @@ footer b{color:var(--ink)}
         <span><span class="legend-dot" style="background:var(--brand-fill)"></span>Visite (1–2 jours)</span>
         <span><span class="legend-dot" style="background:var(--bar-blue)"></span>Visite multi-sites</span>
         <span><span class="legend-dot" style="background:var(--pre-fill)"></span>Pré-évaluation</span>
-        <span class="hint" style="margin-left:auto">Cliquer une structure pour ouvrir son planning détaillé</span>
+        <span class="hint" style="margin-left:auto">Cliquer une structure pour ouvrir son planning détaillé · 📍 ouvre l'itinéraire dans Google Maps</span>
       </div>
       <div class="timeline-scroll">
         <div class="timeline" id="timeline"></div>
@@ -435,14 +445,104 @@ const PRE = [
                      {h:"12h30-16h", na:"IME Arc-en-Ciel + SESSAD Moinandzia — antenne Petite-Terre", li:"Petite-Terre", sv:[...A_PT]}]},
   {d:"2026-10-22", s:[{h:"8h-16h", na:"ITEP Marylang et SESSAD Marylang", li:"Combani", sv:["ITEP","SESSAD Marylang"]}]},
   {d:"2026-10-26", s:[{h:"8h-16h", na:"IME Kangani + SESSAD Kangani (DIME)", li:"Kangani", sv:["IME Kangani","SESSAD Kangani"]}]},
-  {d:"2026-10-27", s:[{h:"8h-11h", na:"LVA Tsoundzou II", li:"Tsoundzou II II", sv:["LVA Tsoundzou II (Nord)"]},
-                     {h:"11h30-16h", na:"IME Arc-en-Ciel + SESSAD Moinandzia — antenne Tsoundzou II", li:"Tsoundzou II II", sv:[...A_TSO]}]},
+  {d:"2026-10-27", s:[{h:"8h-11h", na:"LVA Tsoundzou II", li:"Tsoundzou II", sv:["LVA Tsoundzou II (Nord)"]},
+                     {h:"11h30-16h", na:"IME Arc-en-Ciel + SESSAD Moinandzia — antenne Tsoundzou II", li:"Tsoundzou II", sv:[...A_TSO]}]},
   {d:"2026-10-28", s:[{h:"8h-11h", na:"LVA Chirongui", li:"Chirongui", sv:["LVA Chirongui (Sud)"]},
                      {h:"11h30-16h", na:"MECS", li:"Miréréni (Chirongui)", sv:["MECS"]}]},
   {d:"2026-11-30", s:[{h:"Horaires à préciser", na:"EPE", li:"Poroani · Tsararano · Barakani", sv:["EPE (3 sites)"]}]},
   {d:"2026-12-01", s:[{h:"Horaires à préciser", na:"CER", li:"Nyambadao (Bandrélé)", sv:["CER"]}]}
 ];
 const DAY_LABELS = ["Jour 1","Jour 2","Jour 3","Jour 4","Jour 5"];
+
+/* ---------------- géolocalisation (Google Maps) ---------------- */
+const GEO = {
+  imeChi:     {n:"Chirongui",   lab:"IME Chirongui",          a:"Quartier Cavani, La Poste, Chirongui",       lat:-12.936656, lon:45.147922},
+  sessadChi:  {n:"Chirongui",   lab:"SESSAD Chirongui",       a:"Rue de la Poste, Chirongui",                 lat:-12.936500, lon:45.148917},
+  camspImida: {n:"Chirongui",   lab:"CAMSP Imida",            a:"12 rue Cavani Bé",                           lat:-12.937158, lon:45.148394},
+  lvaSud:     {n:"Chirongui",   lab:"LVA Sud",                a:"10 rue du lycée, Cavani Bé",                 lat:-12.937186, lon:45.148314},
+  mecs:       {n:"Miréréni",    lab:"MECS",                   a:"5 rue Baba Moidamou",                        lat:-12.904789, lon:45.150961},
+  centre:     {n:"Combani",     lab:"IME / SESSAD Combani",   a:"Lotissement Haouledi",                       lat:-12.789894, lon:45.131668},
+  marylang:   {n:"Combani",     lab:"ITEP / SESSAD Marylang", a:"Résidence Yolande, Haouiledi",               lat:-12.795052, lon:45.131102},
+  cmpp:       {n:"CMPP, Combani", lab:"CMPP",                 a:"42 route de Coconi",                         lat:-12.795071, lon:45.131078},
+  tsoundzou:  {n:"Tsoundzou II", lab:"IME / SESSAD Tsoundzou II", a:"15 rue Villa Zanzibar",                 lat:-12.814286, lon:45.200258},
+  lvaNord:    {n:"Tsoundzou II", lab:"LVA Nord",              a:"1444 RN2",                                   lat:-12.812684, lon:45.202012},
+  petiteTerre:{n:"Petite-Terre", lab:"IME / SESSAD Petite-Terre", a:"Quartier Bahoni 3",                      lat:-12.798489, lon:45.281590},
+  tnd:        {n:"Plateforme TND", lab:"Plateforme TND",      a:"12 rue Madi Mché Mtsapéré, Doujani",         lat:-12.792043, lon:45.216223},
+  tanafou:    {n:"M'Tsangamouji", lab:"CAMSP Tanafou",        a:"5 rue Moiboira",                             lat:-12.759561, lon:45.079763},
+  kangani:    {n:"Kangani",     lab:"IME / SESSAD Kangani",   a:"19 rue du Pentagone, Koungou",               lat:-12.733217, lon:45.186634},
+  cer:        {n:"Nyambadao",   lab:"CER",                    a:"Mromohou, RN, Nyambadao",                    lat:-12.897315, lon:45.192684},
+  poroani:    {n:"Poroani",     lab:"EPE Poroani",            a:"1 rue Safi Keli, Poroani",                   lat:-12.894475, lon:45.141297},
+  tsararano:  {n:"Tsararano",   lab:"EPE Tsararano",          a:"1 rue de l'Union",                           lat:-12.834105, lon:45.173158},
+  barakani:   {n:"Barakani",    lab:"EPE Barakani",           a:"39 route de la Vanille",                     lat:-12.839909, lon:45.132902},
+  maecha:     {n:"Maécha",      lab:"CAMSP Maecha",           a:"69 rue des Manguiers",                       lat:-12.783933, lon:45.227714},
+  chrs:       {n:"Dembéni",     lab:"CHRS",                   a:"SIS, quartier de la cour Hajangua, Dembéni", lat:-12.864408, lon:45.197208},
+  smjpm:      {n:"Kaweni",      lab:"SMJPM",                  a:"16 rue de la Geôle, Kaweni",                 lat:-12.775056, lon:45.224766},
+  ema:        {n:"EMA Zawya",   lab:"EMA Zawya",              a:"10 chemin Madi Tchama",                      lat:-12.722702, lon:45.057904},
+  siege:      {n:"Siège, Cavani", lab:"Siège (Cavani)",       a:"3 rue Leclerc, Cavani, Mamoudzou",           lat:-12.782871, lon:45.219939}
+};
+const STRUCT_GEO = {
+  "IME Arc-en-Ciel — antenne Chirongui":["imeChi"],
+  "SESSAD Moinandzia — antenne Chirongui":["sessadChi"],
+  "IME Arc-en-Ciel — antenne Combani":["centre"],
+  "SESSAD Moinandzia — antenne Combani":["centre"],
+  "IME Arc-en-Ciel — antenne Tsoundzou II":["tsoundzou"],
+  "SESSAD Moinandzia — antenne Tsoundzou II":["tsoundzou"],
+  "IME Arc-en-Ciel — antenne Petite-Terre":["petiteTerre"],
+  "SESSAD Moinandzia — antenne Petite-Terre":["petiteTerre"],
+  "IME Arc-en-Ciel — chapitres 2 et 3":["siege","tnd"],
+  "SESSAD Moinandzia — chapitres 2 et 3":["siege","tnd"],
+  "CAMSP Tanafou":["tanafou"],
+  "MECS":["mecs"],
+  "ITEP":["marylang"],
+  "SESSAD Marylang":["marylang"],
+  "CAMSP Imida":["camspImida"],
+  "IME Kangani":["kangani"],
+  "SESSAD Kangani":["kangani"],
+  "LVA Chirongui (Sud)":["lvaSud"],
+  "LVA Tsoundzou II (Nord)":["lvaNord"],
+  "CER":["cer"],
+  "EPE (3 sites)":["poroani","tsararano","barakani"],
+  "CAMSP Maecha":["maecha"],
+  "CHRS":["chrs"],
+  "SMJPM":["smjpm"],
+  "SEMNA":["cmpp"],
+  "EMA":["ema"]
+};
+function mapUrl(g){ return `https://www.google.com/maps/search/?api=1&query=${g.lat},${g.lon}`; }
+function geoUniq(list){
+  const seen = new Set();
+  return list.filter(g=>{ const k=g.lat+','+g.lon; if(seen.has(k)) return false; seen.add(k); return true; });
+}
+function geosOfStruct(sv){ return geoUniq((STRUCT_GEO[sv]||[]).map(k=>GEO[k]).filter(Boolean)); }
+/* pastille autonome (calendrier, en-tête de structure) */
+function pinHtml(g,text){
+  return `<a class="pin" href="${mapUrl(g)}" target="_blank" rel="noopener" title="Ouvrir dans Google Maps — ${g.a}" aria-label="${text} : ouvrir dans Google Maps">📍 ${text}</a>`;
+}
+function pinsOfStruct(sv){
+  const gs = geosOfStruct(sv);
+  return gs.map(g=>pinHtml(g, gs.length>1 ? g.lab : g.n)).join('');
+}
+/* étiquette de lieu cliquable (planning détaillé, pré-évaluation) */
+function locLink(g,text,cls){
+  return `<a class="tag ${cls||'loc'} maplink" href="${mapUrl(g)}" target="_blank" rel="noopener" title="Ouvrir dans Google Maps — ${g.a}" aria-label="${text} : ouvrir dans Google Maps">${text}</a>`;
+}
+/* lieu d'un créneau du planning détaillé */
+function geoForSession(sv,s){
+  if(s.siege) return GEO.siege;
+  if(s.venue){
+    if(/TND/i.test(s.venue)) return GEO.tnd;
+    if(/CMPP/i.test(s.venue)) return GEO.cmpp;
+    return null;
+  }
+  if(!s.li) return null;
+  if(sv==="EPE (3 sites)"){
+    const l = s.li.toLowerCase();
+    for(const k of ["poroani","tsararano","barakani"]) if(l.includes(k)) return GEO[k];
+    return null;
+  }
+  const gs = geosOfStruct(sv);
+  return gs.length ? gs[0] : null;
+}
 
 function parseISO(s){ const [y,m,d]=s.split('-').map(Number); return new Date(Date.UTC(y,m-1,d)); }
 function fmtDate(s){
@@ -552,18 +652,25 @@ function preDatesFor(sv){ return PRE.filter(x=>x.s.some(s=>s.sv.includes(sv))).m
   const rg = (s,e)=> s===e ? fmtDate(s) : fmtDate(s)+' → '+fmtDate(e);
   const list = document.getElementById('tlList');
   rows.forEach(r=>{
-    const it = document.createElement('button');
-    it.type = 'button';
+    const it = document.createElement('div');
     it.className = 'tl-item';
-    it.innerHTML = `<b>${r.sv}</b><div class="tl-chips">`+
+    const pins = pinsOfStruct(r.sv);
+    it.innerHTML = `<button type="button" class="tl-main"><b>${r.sv}</b><div class="tl-chips">`+
       (r.pre ? `<span class="tl-chip pre">Pré-évaluation ${rg(r.pre.start,r.pre.end)}</span>` : '')+
-      `<span class="tl-chip${r.multi?' multi':''}">Visite ${rg(r.start,r.end)}</span></div>`;
-    it.addEventListener('click',()=>goToDetail(r.sv));
+      `<span class="tl-chip${r.multi?' multi':''}">Visite ${rg(r.start,r.end)}</span></div></button>`+
+      (pins ? `<div class="tl-pins">${pins}</div>` : '');
+    it.querySelector('.tl-main').addEventListener('click',()=>goToDetail(r.sv));
     list.appendChild(it);
   });
 })();
 
 /* ---------------- pré-évaluation ---------------- */
+function preLoc(s){
+  const gs = geoUniq(s.sv.flatMap(sv=>(STRUCT_GEO[sv]||[]).map(k=>GEO[k])).filter(Boolean));
+  if(gs.length===1) return locLink(gs[0], '📍 '+s.li);
+  if(gs.length===0) return `<span class="tag loc">${s.li}</span>`;
+  return `<span class="tag loc">${s.li}</span>` + gs.map(g=>locLink(g,'📍 '+g.lab)).join('');
+}
 (function initPre(){
   document.getElementById('preEval').innerHTML =
     `<span class="ref-chip"><b>Pré-évaluation</b> passage d'${PRE_EVALUATEURS[0]} et de ${PRE_EVALUATEURS[1]}</span>`+
@@ -573,7 +680,7 @@ function preDatesFor(sv){ return PRE.filter(x=>x.s.some(s=>s.sv.includes(sv))).m
       <div class="group-head"><h3>${fmtDateLong(x.d)}</h3><span class="meta">${x.s.length} site${x.s.length>1?'s':''}</span></div>
       <div class="group-body"><div class="day-block">${x.s.map(s=>`
         <div class="sess"><div class="time">${s.h}</div><div class="body"><b>${s.na}</b>
-          <div class="tags"><span class="tag loc">${s.li}</span><span class="tag pre">Pré-évaluation</span></div></div></div>`).join('')}
+          <div class="tags">${preLoc(s)}<span class="tag pre">Pré-évaluation</span></div></div></div>`).join('')}
       </div></div>
     </div>`).join('');
 })();
@@ -624,9 +731,10 @@ function renderGroups(){
         if(siegeOnly && !s.siege) return;
         matchCount++; shown++;
         const tags = [];
-        if(s.siege) tags.push(`<span class="tag siege">🏛 Siège (Cavani Mamoudzou)</span>`);
-        else if(s.venue) tags.push(`<span class="tag siege">📍 ${s.venue}</span>`);
-        if(s.li) tags.push(`<span class="tag loc">${s.li}</span>`);
+        const geo = geoForSession(p.sv, s);
+        if(s.siege) tags.push(geo ? locLink(geo,'🏛 Siège (Cavani Mamoudzou)','siege') : `<span class="tag siege">🏛 Siège (Cavani Mamoudzou)</span>`);
+        else if(s.venue) tags.push(geo ? locLink(geo,'📍 '+s.venue,'siege') : `<span class="tag siege">📍 ${s.venue}</span>`);
+        if(s.li) tags.push((geo && !s.siege && !s.venue) ? locLink(geo,'📍 '+s.li) : `<span class="tag loc">${s.li}</span>`);
         if(s.ev) tags.push(`<span class="tag ev">${names(s.ev)}</span>`);
         if(s.fo) tags.push(`<span class="tag">${s.fo}</span>`);
         rows += `
@@ -641,7 +749,7 @@ function renderGroups(){
       });
       const dayRef = (p.refByDay && p.refByDay[di]) || null;
       const refLine = dayRef
-        ? `<div class="day-ref">${dayRef.directeur?`<span class="ref-chip"><b>Directeur ESMS</b> ${dayRef.directeur}</span>`:''}${dayRef.chef_service?`<span class="ref-chip"><b>Chef de service</b> ${dayRef.chef_service}</span>`:''}${dayRef.site?`<span class="tag loc">${dayRef.site}</span>`:''}</div>`
+        ? `<div class="day-ref">${dayRef.directeur?`<span class="ref-chip"><b>Directeur ESMS</b> ${dayRef.directeur}</span>`:''}${dayRef.chef_service?`<span class="ref-chip"><b>Chef de service</b> ${dayRef.chef_service}</span>`:''}${dayRef.site?(geosOfStruct(p.sv).length===1 ? locLink(geosOfStruct(p.sv)[0],'📍 '+dayRef.site) : `<span class="tag loc">${dayRef.site}</span>`):''}</div>`
         : '';
       dayBlocks += `
         <div class="day-block">
@@ -663,6 +771,8 @@ function renderGroups(){
       </div>` : '';
     const pd = preDatesFor(p.sv);
     const noteBlock = p.note ? `<div class="group-ref"><span class="ref-chip"><b>Structure concernée</b> ${p.note}</span></div>` : '';
+    const pinsHtml = pinsOfStruct(p.sv);
+    const pinBlock = pinsHtml ? `<div class="group-ref">${pinsHtml}</div>` : '';
     const preBlock = pd.length ? `<div class="group-ref"><span class="ref-chip"><b>Pré-évaluation</b> ${pd.map(fmtDateLong).join(' · ')}</span></div>` : '';
     const g = document.createElement('div');
     g.className = 'group';
@@ -672,7 +782,7 @@ function renderGroups(){
         <h3>${p.sv}</h3>
         <span class="meta">${fmtDate(dates[0])}${dates[0]!==dates[dates.length-1] ? ' → '+fmtDate(dates[dates.length-1]) : ''} · ${p.dy.length} jour${p.dy.length>1?'s':''}</span>
       </div>
-      ${noteBlock}${refBlock}${preBlock}
+      ${noteBlock}${refBlock}${pinBlock}${preBlock}
       <div class="group-body">${dayBlocks}</div>`;
     wrap.appendChild(g);
   });
